@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: weather_forecast_bot_production
-  username: weather_forecast_bot
-  password: <%= ENV['WEATHER_FORECAST_BOT_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: <%= ENV['DATABASE_URL'] %>
